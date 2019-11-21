@@ -1,0 +1,38 @@
+.hello
+  {
+  
+    background-image:url("../../assets/10.jpg");
+    height:83vh;
+    background-attachment:fixed;
+    background-size:cover;
+    background-repeat:no-repeat;
+  }
+  .player-container{
+    display: flex;
+ flex-direction: row;
+    justify-content: space-around;
+    color:black;
+
+     
+ }
+ .content{
+  display: flex;
+ flex-direction: column;
+ margin: 1.2em;
+ width: 20vw;
+ height: 60vh;
+ background-color:lightslategray; 
+
+}
+.keep-c-note-container {
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  margin: 2em;
+  justify-content:space-around;
+  margin:2px auto;
+  flex-wrap: wrap;
+}
+.cp{
+  background-color:lightslategray;
+}

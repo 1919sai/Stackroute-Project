@@ -1,0 +1,113 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand text-white font-weight-bold display-3" href="#">
+            <img src="assets/w.jpg" width="40" height="40" class="d-inline-block align-top" alt="">
+         CricApi                  </a>
+         <div id="topnav">        
+            <a class="nav-item nav-link text-white"  href="http://localhost:4200/dashboardpage">DashBoard</a>
+         </div>
+</nav>
+
+<div class="hello">
+    <form  #myform="ngForm">
+  <mat-card class="example-card">
+        <mat-card-header>
+      
+            <mat-card-title style="margin-left:3.5em;text-align: center;"><h3>Update</h3></mat-card-title>
+        
+          </mat-card-header>
+        <mat-card-content>
+                <div class="update">
+                  <mat-form-field>
+
+            <input type="text" matInput minlength=5 class="userName" name="userName" #userName="ngModel" [(ngModel)]="uobj.userName" placeholder="Name" required>
+                                     
+          </mat-form-field>
+          <label id="minimum7" class="error-message"  *ngIf="userName.invalid && userName.errors.minlength && (userName.dirty && userName.touched)"> Name Required</label>
+                                            
+
+            <mat-form-field>
+            <input type="text" matInput class="emailId" name="email" [(ngModel)]="uobj.emailId" placeholder="Email" disabled>
+          </mat-form-field>
+          
+          <mat-form-field>
+              <input type="text" matInput minlength=10 class="userPhone" name="phone" #phone="ngModel" [(ngModel)]="uobj.userPhone" placeholder="UserPhone" required>
+              </mat-form-field>
+              <label id="mini" class="error-message" *ngIf="phone.invalid && phone.errors.minlength && (phone.dirty && phone.touched)">Phone Required</label>
+                 
+          <mat-form-field>
+              <input type="text" matInput  class="userCity" name="city" #city="ngModel" [(ngModel)]="uobj.userCity" placeholder="UserCity" required>
+               </mat-form-field>
+               <label id="minimum7" class="error-message" *ngIf="city.invalid && (city.dirty && city.touched)">City Required</label>
+        
+            <mat-form-field>
+            <input [type]="hide ? 'text' : 'password'" minlength=9 matInput name="userPassword" class="userPassword"  #userPassword="ngModel" [(ngModel)]="uobj.userPassword"  placeholder="Password"
+            required><button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                   </button>
+                  </mat-form-field>
+            
+                  <label id="minimum3" class="error-message" *ngIf="userPassword.invalid && userPassword.errors.minlength && (userPassword.dirty && userPassword.touched)">Password Required</label>
+                    
+            <mat-error *ngIf="submitMessage" class="error-message">{{submitMessage}}</mat-error>
+    
+        
+        </div>
+        <section class="btn_class">
+                <div class="Update_btn"> <button mat-raised-button color="primary" [disabled]="myform.invalid" (click)='done_btn()'>Update Profile</button>
+                </div>
+                <!--
+                <div class="login_btn"> <button mat-raised-button color="primary" (click)='login()'>Login</button>
+            
+                </div>
+    
+              -->       
+              </section>
+    
+            </mat-card-content>
+    
+        </mat-card> 
+      </form>
+
+      </div>  
+      <footer>
+        <!-- Copyright -->
+     <div class="footer-copyright text-center py-3 bg-dark text-white">© 2018 Copyright:
+           <a class="hello text-white" href="http://localhost:4200/homepage"> CricApi.com</a>
+         </div>
+         <!-- Copyright -->
+       
+       </footer>  
+     <!-- <mat-card >
+      <mat-card-content>
+          <form (ngSubmit)="OnSubmit(emailid,username,usermobile,password,confirmpassword)">
+          <mat-card class="mycard">
+              <mat-card-header class="header"> 
+                  <mat-card-title><h1>Edit</h1></mat-card-title>
+                </mat-card-header>
+                 <mat-form-field class="full-width">
+                    <mat-label class="full-color">Email Id</mat-label>
+                    <input value="{{emailid}}"  matInput placeholder="Email" #email name="emailid"readonly> 
+                 </mat-form-field><br>
+                 <mat-form-field class="full-width">
+                  <mat-label class="full-color">username</mat-label>
+                  <input  matInput placeholder="username" #username name="username" [(ngModel)]="user.username" ngModel required>
+               </mat-form-field><br>
+               <mat-form-field class="full-width">
+                      <mat-label class="full-color">Phone number</mat-label>
+                      <input  matInput placeholder="phone number" #usermobile name="usermobile" [(ngModel)]="user.usermobile" ngModel required>
+                   </mat-form-field><br>
+                 <mat-form-field class="full-width">
+                    <mat-label class="full-color">Password</mat-label>
+                    <input  matInput placeholder="Password" #userpassword name="userpassword" ngModel required>
+                 </mat-form-field><br>
+                 <mat-form-field class="full-width">
+                  <mat-label class="full-color">Confirm Password</mat-label>
+                  <input  matInput placeholder="confirm Password" #confirmpassword name="confirmpassword" ngModel required>
+               </mat-form-field><br>
+            <button mat-raised-button  color="warn">update profile</button>
+              </mat-card>
+      </form> 
+      </mat-card-content>
+      </mat-card> -->
+    

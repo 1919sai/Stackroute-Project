@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand text-white font-weight-bold display-3" href="#">
+            <img src="assets/w.jpg" width="40" height="40" class="d-inline-block align-top" alt="">
+         CricApi                  </a>
+         <div id="topnav">
+         <a class="nav-item nav-link text-white"  href="http://localhost:4200/dashboardpage">DashBoard</a>
+         </div> 
+</nav>
+<div class="hello">
+  
+
+  <form  [formGroup]="loginform" class="login">
+        <mat-card class="cards">
+            <mat-card-header>
+                <mat-card-title style="margin-left:3.5em;text-align: center;"><h1>Login</h1></mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+            
+            <div class="login">
+            
+              <mat-form-field>
+          
+                <input matInput placeholder="EmailId" formControlName="emailId">
+                <mat-error *ngIf="loginform.get('emailId')?.invalid"> 
+                  Required email
+                </mat-error>
+              </mat-form-field> 
+              <mat-form-field>
+                <input [type]="hide ? 'text' : 'password'" type="userPassword" matInput placeholder="Password" formControlName="userPassword">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+               </button> 
+              </mat-form-field>
+            </div>
+                <section class="btn_class">
+                    <div class="login_btn"> <button mat-raised-button color="primary" [disabled]="loginform.invalid" (click)="validate(loginform)">Login</button>
+                
+                    </div>
+                    <div class="register-btn"> <button mat-raised-button color="primary" (click)='register()'>Register</button>
+                    </div>
+                
+                  </section>
+
+                </mat-card-content>
+  
+            </mat-card> 
+            <label>{{errmsg}}</label>
+  </form>
+          </div>
+          <footer>
+            <!-- Copyright -->
+         <div class="footer-copyright text-center py-3 bg-dark text-white">© 2018 Copyright:
+               <a class="hello text-white"href="http://localhost:4200/homepage"> CricApi.com</a>
+             </div>
+             <!-- Copyright -->
+           
+           </footer>

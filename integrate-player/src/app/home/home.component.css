@@ -1,0 +1,36 @@
+.seccard{
+    display:flex;
+    flex-direction:row;
+    margin:70px;
+}
+.carousel-item
+{
+    
+    width: 100%;
+    height:650px;
+}
+
+.jumbotron
+{
+    margin-top:70px;
+}
+#log
+{
+    float:right;
+}
+nav{
+    overflow: hidden;
+    background-color: #333;
+
+    top: 0;
+    width: 100%;
+  }
+  
+  #topnav a:hover {
+    background-color:green;
+    color: black;
+  }
+  
+  #topnav a.active {
+    color: white;
+  }

@@ -1,0 +1,119 @@
+
+<!--
+  <mat-toolbar color="warn" class="title-center">
+ 
+
+   
+     
+     
+
+ <section class="dsection">
+   <a href="" id="favourite">Favourites</a>
+   <a href="" id="recommendations">Recommendations</a>
+   <a href="" id="pstatistics">Statistics</a>
+
+  
+    <form>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  
+    <button mat-flat-button id="#search-button" color="primary" (click)='onEnter()'>Search</button>
+    -->
+   <!--<button  color="primary" (click)="logout()">Singout</button>
+   <button class="btn btn-outline-success my-2 my-sm-0" (click)="logout()"type="submit">SignOut</button>
+
+ </section>
+
+</mat-toolbar>
+-->
+
+
+<!--
+
+<div class="search-container">
+  <mat-toolbar class="search"> 
+      <div class="button">
+          <button id="favourite" mat-raised-button color="primary" (click)="gotofav()">Favorites</button>
+          <button id="recommendations" mat-raised-button color="primary" (click)="gotorecomm()">Recommendation</button>
+          <button id="pstatistics" mat-raised-button color="primary" (click)="gotostat()">Statistics</button>
+          
+      </div> 
+      <mat-form-field class="field" appearance="outline">
+          <mat-label class="label">Search Player</mat-label>
+          <input (keyup)="onKey($event)" matInput class="input">
+          <mat-icon matSuffix><i class="material-icons"> search
+              </i></mat-icon>
+       </mat-form-field>
+  </mat-toolbar>
+  </div>
+  
+
+  <section class="player-container">
+          <mat-card *ngFor="let player of players" class="content">
+               
+              <div class="image">
+                  <img class="player-image" mat-card-image [src]="player.imageURL" onError="this.src='assets/blank-profile.png';" [alt]="player.name">
+              </div>
+            
+              <div class="heading">
+                  <mat-card-header>
+                      <mat-card-title>{{player.pid}}</mat-card-title>
+                      <mat-card-title>{{player.name}}</mat-card-title>
+                    </mat-card-header>
+              </div>    
+              <div class="fav">
+      
+                    <mat-card-footer>
+                      <button  class="previousAddButton" mat-button color="accent" (click)="addToFavouriteList()">Add To Favorites  <i class="fa fa-star" aria-hidden="true"></i></button>
+                      <button  class="addButton" mat-button color="accent" (click)="addToRecomndedList()">Add To Recommendations  <i class="fa fa-star" aria-hidden="true"></i></button>
+                      </mat-card-footer>
+                 
+              </div>
+            </mat-card>
+  </section>
+-->
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand text-white font-weight-bold display-3" href="#">
+            <img src="assets/w.jpg" width="40" height="40" class="d-inline-block align-top" alt="">
+         CricApi                  </a>
+                        
+</nav>
+
+<app-cricdata></app-cricdata>
+
+<div class="hello">
+    
+    <section class="player-container">
+        <mat-card *ngFor="let player of players | paginate: { itemsPerPage: 3, currentPage: p}" class="content">
+               
+             
+            <div class="image">
+            <img class="player-image" mat-card-image [src]="player.imageURL" onError="this.src='assets/empty.webp';" [alt]="player.name">
+        </div>
+          
+            <div class="heading">
+                <mat-card-header>
+                    <mat-card-title>{{player.pid}}</mat-card-title>
+                    <mat-card-title>{{player.name}}</mat-card-title>
+                   </mat-card-header>
+            </div>
+          </mat-card>
+         
+    </section>
+    <p class="cp">
+        <pagination-controls style="background-color:blue;"  (pageChange)="p = $event"></pagination-controls>
+    
+    </p>
+    
+</div>
+<footer>
+  <!-- Copyright -->
+<div class="footer-copyright text-center py-3 bg-dark text-white">© 2018 Copyright:
+     <a class="hello text-white"href="http://localhost:4200/homepage"> CricApi.com</a>
+   </div>
+   <!-- Copyright -->
+ 
+ </footer>

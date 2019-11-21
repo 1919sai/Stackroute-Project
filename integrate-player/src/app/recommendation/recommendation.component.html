@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand text-white font-weight-bold display-3" href="#">
+            <img src="assets/w.jpg" width="40" height="40" class="d-inline-block align-top" alt="">
+         CricApi                  </a>
+         <div id=topnav>
+         <a class="nav-item nav-link text-white"  href="http://localhost:4200/dashboardpage">DashBoard</a>
+             </div>           
+</nav>
+
+<div class="hello" >
+<section class="player-container">
+        <mat-card *ngFor="let player of players | paginate: { itemsPerPage: 4, currentPage: p}" class="content">
+                <div class="keep-c-note-container">
+                    <app-card [player] = 'player' *ngFor = "let player of players  "></app-card>
+                </div>
+             
+                <div class="image">
+                <img class="player-image" mat-card-image [src]="player.imageURL" onError="this.src='assets/blank-profile.png';" [alt]="player.name">
+            </div>
+          
+            <div class="heading">
+                <mat-card-header>
+                    <mat-card-title>{{player.pid}}</mat-card-title>
+                    <mat-card-title>{{player.name}}</mat-card-title>
+                   </mat-card-header>
+            </div>    
+            <div class="fav">
+    
+                  <mat-card-footer>
+                    <button  class="previousAddButton" mat-button color="accent" (click)="delrecom(player.recId)">UnRecommend <i class="fa fa-star" aria-hidden="true"></i></button>
+                    
+                </mat-card-footer>
+               
+            </div>
+          </mat-card>
+          <pagination-controls  (pageChange)="p = $event"></pagination-controls>
+
+</section>
+
+</div>
+<footer>
+    <!-- Copyright -->
+ <div class="footer-copyright text-center py-3 bg-dark text-white">© 2018 Copyright:
+       <a class="hello text-white"href="http://localhost:4200/homepage"> CricApi.com</a>
+     </div>
+     <!-- Copyright -->
+   
+   </footer>

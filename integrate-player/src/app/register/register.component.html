@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand text-white font-weight-bold display-3" href="#">
+            <img src="assets/w.jpg" width="40" height="40" class="d-inline-block align-top" alt="">
+         CricApi                  </a>
+         <div id="topnav">
+         <a class="nav-item nav-link text-white"  href="http://localhost:4200/dashboardpage">DashBoard</a>
+        </div>  
+</nav>
+<div class="hello">
+  <form  [formGroup]="loginform" class="login">
+    <mat-card class="cards">
+        <mat-card-header>
+          <mat-card-title style="margin-left:3.5em;text-align: center;"><h1>Register</h1></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="login">
+                <mat-form-field>
+                  <input type="text" matInput class="userName" formControlName="userName" placeholder="Name">
+                  <mat-error *ngIf="loginform.get('userName')?.invalid"> 
+                       Name Required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  
+                <input matInput placeholder="EmailId" formControlName="emailId">
+                <mat-error *ngIf="loginform.get('emailId')?.invalid"> 
+                   Email Required
+                </mat-error>
+                </mat-form-field>
+                
+                <mat-form-field>
+                    <input type="text" matInput class="userPhone" formControlName="userPhone" placeholder="Phone Number">
+                    <mat-error *ngIf="loginform.get('userPhone')?.invalid"> 
+                         Phone Required
+                      </mat-error>
+                  </mat-form-field>
+                  
+                <mat-form-field>
+                    <input type="text" matInput class="userCity" formControlName="userCity" placeholder="City Name">
+                    <mat-error *ngIf="loginform.get('userCity')?.invalid"> 
+                         Phone Required
+                      </mat-error>
+                  </mat-form-field>
+                <mat-form-field>
+                    <input [type]="hide ? 'text' : 'password'" type="userPassword" matInput placeholder="Password" formControlName="userPassword">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                   </button> 
+                </mat-form-field>
+
+                
+                <mat-form-field>
+                    <input [type]="hide ? 'text' : 'password'" type="conPassword" matInput placeholder="Confirm Password" formControlName="conPassword">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                   </button> 
+                </mat-form-field>
+                  
+                
+            </div>
+            <section class="btn_class">
+        
+                <div class="register-btn"> <button mat-raised-button color="primary" [disabled]="loginform.invalid" (click)='regSubmit(loginform)'>Register</button>
+                </div>
+                <br>
+                <div class="login_btn">
+                Already Registered:<a href="http://localhost:4200/loginpage">LogIn</a>
+              </div>
+              </section>
+            <section>
+              
+            </section>
+          </mat-card-content>
+        </mat-card> 
+  </form>
+</div>
+<footer>
+  <!-- Copyright -->
+<div class="footer-copyright text-center py-3 bg-dark text-white">© 2018 Copyright:
+     <a class="hello text-white"href="http://localhost:4200/homepage"> CricApi.com</a>
+   </div>
+   <!-- Copyright -->
+ 
+ </footer>

@@ -1,0 +1,45 @@
+.player-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color:black;
+ }
+ .heading{
+    margin-bottom: 0.5em;
+    font-size:14px;
+ }
+ 
+ .player-image{
+    width: 15vw;
+    height: 30vh;
+    margin-bottom: 0.5em;
+    margin-left: 1.5em;
+ }
+ .content{
+    display: flex;
+   flex-direction: column;
+   margin: 1.2em;
+   width: 20vw;
+   height: 60vh;
+}
+.hello
+ {
+     background-color: skyblue;
+   
+  
+    background-image:url("../../assets/10.jpg");
+    height:100vh;
+    background-attachment:fixed;
+    background-size:cover;
+    background-repeat:no-repeat;
+    width: 100%;
+  
+ }
+ #topnav a:hover {
+   background-color:green;
+   color: black;
+ }
+ 
+ #topnav a.active {
+   color: white;
+ }

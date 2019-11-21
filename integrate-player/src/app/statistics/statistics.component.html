@@ -1,0 +1,43 @@
+<!--
+<input type="button" (onclick)="getst()" value="Stat">
+-->
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <a class="navbar-brand text-white font-weight-bold display-3" href="#">
+          <img src="assets/w.jpg" width="40" height="40" class="d-inline-block align-top" alt="">
+       CricApi                  </a>
+       <div id="topnav">
+       <a class="nav-item nav-link text-white"  href="http://localhost:4200/dashboardpage">DashBoard</a>
+      </div>             
+</nav>
+    <div class="hello">
+    <section class="player-container">
+            <mat-card  class="content">
+                 
+                <div class="image">
+                    <img class="player-image" mat-card-image [src]="playerStats.imageURL" onError="this.src='assets/blank-profile.png';" [alt]="playerStats.name">
+                </div>
+              
+                <div class="heading">
+                
+                        <mat-card-title>{{playerStats.country}}</mat-card-title>
+                        <h6>{{playerStats.name}}</h6>
+                        
+                        <p>{{playerStats.battingStyle}}</p>
+                        <p>{{playerStats.bowlingStyle}}</p>
+                        <p>{{playerStats.majorteams}}</p>
+
+                        <p>{{playerStats.playingrole}}</p>
+                        
+                      <p>{{playerStats.born}}</p>
+                </div>
+              </mat-card>
+    </section>
+</div>
+<footer>
+    <!-- Copyright -->
+ <div class="footer-copyright text-center py-3 bg-dark text-white">© 2018 Copyright:
+       <a class="hello text-white"href="http://localhost:4200/homepage"> CricApi.com</a>
+     </div>
+     <!-- Copyright -->
+   
+   </footer>

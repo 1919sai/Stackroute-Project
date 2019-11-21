@@ -1,0 +1,54 @@
+
+    <div class="search-container">
+        <mat-toolbar class="search"> 
+             <div class="button">
+                     <button id="favourite" mat-raised-button color="primary" (click)="gotofav()">Favorites</button>
+                     <button id="recommendations" mat-raised-button color="primary" (click)="gotorecomm()">Recommendation</button>
+                     
+                     <mat-form-field class="field">
+                        <input (keyup)="onKey($event)" matInput class="input" placeholder="Player Search">
+                         <mat-icon matSuffix><i class="material-icons"> search</i></mat-icon>
+                    </mat-form-field>
+                
+                     <button id="update" mat-raised-button color="primary" (click)="upd()">Update Profile</button>
+          
+                     <button id="logout" mat-raised-button color="primary" (click)="logout()">LogOut</button>
+          
+            </div> 
+    
+        </mat-toolbar>
+    </div>
+
+    
+  <section class="player-container">
+
+        <mat-card *ngFor="let rplayer of players  " class="content">
+                 <div >
+                    <app-card [player] = 'player' *ngFor = "let rplayer of players  "></app-card>
+                </div>
+        <div class="keep-c-note-container">                
+                    <div class="image">
+                        <img class="player-image" mat-card-image [src]="rplayer.imageURL" onError="this.src='assets/blank-profile.png';" [alt]="rplayer.name">
+                    </div>
+          
+                <div class="heading">
+                    <mat-card-header>
+                        <h6>{{rplayer.name}}</h6>
+                    </mat-card-header>
+                </div>    
+                <div class="fav">
+                  <mat-card-footer>
+                    <button  class="previousAddButton" mat-button color="accent" (click)="addToFavouriteList(rplayer)">Add To Favorites  <i class="fa fa-star" aria-hidden="true"></i></button>
+                    <button  class="addButton" mat-button color="accent" (click)="addToRecommendList(rplayer)">Add To Recommendations  <i class="fa fa-star" aria-hidden="true"></i></button>
+                    <button  class="Button" mat-button color="accent" (click)="gotostat(rplayer.pid)">Statistics  <i class="fa fa-star" aria-hidden="true"></i></button>
+                    </mat-card-footer>
+               </div>
+        </div>
+        </mat-card>        
+</section>
+
+
+<!--  <p>
+    <pagination-controls  (pageChange)="p2 = $event"></pagination-controls>
+</p>
+-->
